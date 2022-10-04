@@ -1,0 +1,7 @@
+# ninja log v5
+3	409	6865581464563861	CMakeFiles/IA-vacuum-agent.dir/src/main.cpp.obj	a3d5d4eedd857e22
+410	514	6865581465589426	IA-vacuum-agent.exe	e740316b22820712
+10	312	6865477830656156	CMakeFiles/IA-vacuum-agent.dir/src/Display.cpp.obj	e40e65c84ea40bac
+1	121	6865582266359640	build.ninja	632b69e58654b774
+2	279	6865481795038597	CMakeFiles/IA-vacuum-agent.dir/src/Environnement.cpp.obj	f6d0ffaa3c245732
+16	312	6865466941696308	CMakeFiles/IA-vacuum-agent.dir/src/Square.cpp.obj	a859eca53e3b25c8

@@ -1,0 +1,3 @@
+C:/Users/Bell/Documents/GitHub/IA-vacuum-agent/cmake-build-debug/CMakeFiles/IA-vacuum-agent.dir
+C:/Users/Bell/Documents/GitHub/IA-vacuum-agent/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Bell/Documents/GitHub/IA-vacuum-agent/cmake-build-debug/CMakeFiles/rebuild_cache.dir
