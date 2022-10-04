@@ -23,3 +23,17 @@ void Square::addDust() {
 void Square::addJewel() {
     m_nbJewel += 1;
 }
+
+int Square::cleanDust() {
+    int nbDust = m_nbDust;
+    m_nbDust = 0;
+
+    return nbDust;
+}
+
+int Square::pickUpJewels() {
+    int nbJewel = m_nbJewel;
+    m_nbJewel = 0;
+
+    return nbJewel;
+}

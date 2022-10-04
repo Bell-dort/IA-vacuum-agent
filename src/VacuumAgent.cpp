@@ -4,7 +4,7 @@
 
 #include "../header/VacuumAgent.h"
 
-VacuumAgent::VacuumAgent(Environment *environment) : m_sensor(environment), m_frequency(0.1) {
+VacuumAgent::VacuumAgent(Environment *environment) : m_sensor(environment), m_actuators(environment), m_frequency(0.1) {
 }
 
 void VacuumAgent::run() {

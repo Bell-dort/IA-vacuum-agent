@@ -14,6 +14,8 @@ public:
     int getNbJewel();
     void addDust();
     void addJewel();
+    int pickUpJewels();
+    int cleanDust();
 
 private:
     int m_nbDust;

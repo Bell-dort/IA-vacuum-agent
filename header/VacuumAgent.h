@@ -7,6 +7,7 @@
 
 #include "Square.h"
 #include "Sensor.h"
+#include "Actuators.h"
 #include "Environment.h"
 
 
@@ -20,6 +21,7 @@ private:
     Square** m_desire;
     // Intent;
     Sensor m_sensor;
+    Actuators m_actuators;
     float m_frequency;
 };
 

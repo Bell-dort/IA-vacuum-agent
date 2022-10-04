@@ -102,4 +102,12 @@ int Environment::getVacuumY() {
     return m_vacuumY;
 }
 
+void Environment::setVacuumX(int x) {
+    m_vacuumX = x;
+}
+
+void Environment::setVacuumY(int y) {
+    m_vacuumY = y;
+}
+
 

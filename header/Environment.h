@@ -25,6 +25,8 @@ public:
     int getDustSpawnProbability();
     int getVacuumX();
     int getVacuumY();
+    void setVacuumX(int x);
+    void setVacuumY(int y);
 
     void run();
     void generateDust();
