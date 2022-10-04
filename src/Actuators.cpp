@@ -18,7 +18,7 @@ void Actuators::moveLeft() {
     int vacuumX = env->getVacuumX();
 
     if (vacuumX > 0) {
-        env->setVacuumX(vacuumX - 1).
+        env->setVacuumX(vacuumX - 1);
     }
 }
 
