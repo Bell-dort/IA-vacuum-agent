@@ -2,8 +2,8 @@
 // Created by Bell on 28/09/2022.
 //
 
-#ifndef IA_VACUUM_AGENT_ENVIRONNEMENT_H
-#define IA_VACUUM_AGENT_ENVIRONNEMENT_H
+#ifndef IA_VACUUM_AGENT_ENVIRONMENT_H
+#define IA_VACUUM_AGENT_ENVIRONMENT_H
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -14,14 +14,17 @@
 
 
 
-class Environnement {
+class Environment {
 public:
-    Environnement();
+    Environment();
+    ~Environment();
     Square** getSquares();
     const int getHeight();
     const int getWidth();
     int getJewelSpawnProbability();
     int getDustSpawnProbability();
+    int getVacuumX();
+    int getVacuumY();
 
     void run();
     void generateDust();
@@ -36,7 +39,9 @@ private:
     float m_dustSpawnProbability;
     float m_jewelSpawnProbability;
     float m_frequency;
+    int m_vacuumX;
+    int m_vacuumY;
 };
 
 
-#endif //IA_VACUUM_AGENT_ENVIRONNEMENT_H
+#endif //IA_VACUUM_AGENT_ENVIRONMENT_H

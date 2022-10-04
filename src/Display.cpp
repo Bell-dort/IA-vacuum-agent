@@ -3,7 +3,7 @@
 //
 
 #include "../header/Display.h"
-void Display::consoleRender(Environnement env) {
+void Display::consoleRender(Environment env) {
     int envHeight = env.getHeight();
     int envWidth= env.getWidth();
     Square** envSquares = env.getSquares();

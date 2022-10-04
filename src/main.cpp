@@ -5,8 +5,11 @@
 
 int main()
 {
-    Environnement env;
-    std::thread envThread(&Environnement::run, env);
+    Environment env;
+    VacuumAgent vacuumAgent(&env);
+
+    std::thread envThread(&Environment::run, env);
+    std::thread vacuumAgentThread(&VacuumAgent::run, vacuumAgent);
 
     envThread.join();
 

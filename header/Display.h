@@ -6,13 +6,13 @@
 #define IA_VACUUM_AGENT_DISPLAY_H
 
 #include <iostream>
-#include "Environnement.h"
+#include "Environment.h"
 #include "Square.h"
 
 class Display {
 public:
     Display();
-    void consoleRender(Environnement env);
+    void consoleRender(Environment env);
 };
 
 

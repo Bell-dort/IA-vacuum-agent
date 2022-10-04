@@ -2,9 +2,9 @@
 // Created by Bell on 28/09/2022.
 //
 
-#include "../header/Environnement.h"
+#include "../header/Environment.h"
 
-Environnement::Environnement(): m_height(5), m_width(5), m_dustSpawnProbability(0.3f), m_jewelSpawnProbability(0.2f), m_frequency(1) {
+Environment::Environment(): m_height(5), m_width(5), m_dustSpawnProbability(0.3f), m_jewelSpawnProbability(0.2f), m_frequency(1) {
     m_squares = new Square * [m_width];
 
     for (int i(0); i < m_width; i++) {
@@ -14,7 +14,15 @@ Environnement::Environnement(): m_height(5), m_width(5), m_dustSpawnProbability(
     srand(time(NULL));
 }
 
-void Environnement::run() {
+Environment::~Environment() {
+    for (int i(0); i < m_height; i++) {
+        delete m_squares[i];
+    }
+
+    delete m_squares;
+}
+
+void Environment::run() {
     float spawningJewel;
     float spawningDust;
     while (1) {
@@ -35,23 +43,25 @@ void Environnement::run() {
     }
 }
 
-void Environnement::generateDust() {
+void Environment::generateDust() {
     int randX = rand() % 5;
     int randY = rand() % 5;
     m_squares[randX][randY].addDust();
     display();
 }
 
-void Environnement::generateJewel() {
+void Environment::generateJewel() {
     int randX = rand() % 5;
     int randY = rand() % 5;
     m_squares[randX][randY].addJewel();
     display();
 }
 
-void Environnement::display() {
+void Environment::display() {
     std::string tempLine("");
     std::string hSeparator("----------------------------------------------");
+
+    std::cout << "Current environment : " << std::endl;
 
     for (int i(0); i < m_height; i++) {
         tempLine += "|";
@@ -64,24 +74,32 @@ void Environnement::display() {
     std::cout << hSeparator << std::endl << std::endl;
 }
 
-Square** Environnement::getSquares() {
+Square** Environment::getSquares() {
     return m_squares;
 }
 
-int const Environnement::getHeight() {
+int const Environment::getHeight() {
     return m_height;
 }
 
-int const Environnement::getWidth() {
+int const Environment::getWidth() {
     return m_width;
 }
 
-int Environnement::getDustSpawnProbability() {
+int Environment::getDustSpawnProbability() {
     return m_dustSpawnProbability;
 }
 
-int Environnement::getJewelSpawnProbability() {
+int Environment::getJewelSpawnProbability() {
     return m_jewelSpawnProbability;
+}
+
+int Environment::getVacuumX() {
+    return m_vacuumX;
+}
+
+int Environment::getVacuumY() {
+    return m_vacuumY;
 }
 
 

@@ -8,9 +8,10 @@
 #include <iostream>
 #include <thread>
 
-#include "Environnement.h"
+#include "Environment.h"
 #include "Display.h"
 #include "Square.h"
+#include "VacuumAgent.h"
 
 
 #endif //IA_VACUUM_AGENT_INCLUDES_H

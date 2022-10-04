@@ -9,6 +9,7 @@
 class Square {
 public:
     Square();
+    Square(Square const &other);
     int getNbDust();
     int getNbJewel();
     void addDust();

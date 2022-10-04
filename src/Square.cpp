@@ -6,6 +6,8 @@
 
 Square::Square(): m_nbDust(0), m_nbJewel(0) {}
 
+Square::Square(Square const &other): m_nbDust(other.m_nbDust), m_nbJewel(other.m_nbJewel) {}
+
 int Square::getNbDust() {
     return m_nbDust;
 }
