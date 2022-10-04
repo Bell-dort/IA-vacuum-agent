@@ -4,46 +4,39 @@
 
 #include "../header/Actuators.h"
 
-Actuators::Actuators(Environment *environment) : env(environment) {}
+Actuators::Actuators(Environment *environment, int* vacPosX, int* vacPosY) : pEnv(environment), pVacuumPosX(vacPosX), pVacuumPosY(vacPosY) {
+}
 
 void Actuators::moveRight() {
-    int vacuumX = env->getVacuumX();
-
-    if (vacuumX < env->getWidth()) {
-        env->setVacuumX( vacuumX + 1);
+    if (*pVacuumPosX < pEnv->getWidth()) {
+        *pVacuumPosX = *pVacuumPosX + 1;
     }
 }
 
 void Actuators::moveLeft() {
-    int vacuumX = env->getVacuumX();
-
-    if (vacuumX > 0) {
-        env->setVacuumX(vacuumX - 1);
+    if (*pVacuumPosX > 0) {
+        (*pVacuumPosX)--;
     }
 }
 
 void Actuators::moveDown() {
-    int vacuumY = env->getVacuumY();
-
-    if (vacuumY < env->getHeight()) {
-        env->setVacuumY(vacuumY + 1);
+    if (*pVacuumPosY < pEnv->getHeight()) {
+        (*pVacuumPosY)++;
     }
 }
 
 void Actuators::moveUp() {
-    int vacuumY = env->getVacuumY();
-
-    if (vacuumY > 0) {
-        env->setVacuumY(vacuumY - 1);
+    if (*pVacuumPosY > 0) {
+        (*pVacuumPosY)--;
     }
 }
 
 void Actuators::pickUpJewel() {
-    env->getSquares()[env->getVacuumX(), env->getVacuumY()]->pickUpJewels();
+    pEnv->getSquares()[*pVacuumPosX, *pVacuumPosY]->pickUpJewels();
     // TODO score perf ?
 }
 
 void Actuators::cleanSquare() {
-    env->getSquares()[env->getVacuumX(), env->getVacuumY()]->cleanDust();
+    pEnv->getSquares()[*pVacuumPosX, *pVacuumPosY]->cleanDust();
     // TODO score perf ?
 }

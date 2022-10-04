@@ -91,6 +91,12 @@ build CMakeFiles/IA-vacuum-agent.dir/src/Actuators.cpp.obj: CXX_COMPILER__IA-vac
   OBJECT_DIR = CMakeFiles\IA-vacuum-agent.dir
   OBJECT_FILE_DIR = CMakeFiles\IA-vacuum-agent.dir\src
 
+build CMakeFiles/IA-vacuum-agent.dir/src/State.cpp.obj: CXX_COMPILER__IA-vacuum-agent_Debug C$:/Users/Bell/Documents/GitHub/IA-vacuum-agent/src/State.cpp || cmake_object_order_depends_target_IA-vacuum-agent
+  DEP_FILE = CMakeFiles\IA-vacuum-agent.dir\src\State.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\IA-vacuum-agent.dir
+  OBJECT_FILE_DIR = CMakeFiles\IA-vacuum-agent.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target IA-vacuum-agent
@@ -99,7 +105,7 @@ build CMakeFiles/IA-vacuum-agent.dir/src/Actuators.cpp.obj: CXX_COMPILER__IA-vac
 #############################################
 # Link the executable IA-vacuum-agent.exe
 
-build IA-vacuum-agent.exe: CXX_EXECUTABLE_LINKER__IA-vacuum-agent_Debug CMakeFiles/IA-vacuum-agent.dir/src/main.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/Environment.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/Square.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/Display.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/VacuumAgent.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/Sensor.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/Actuators.cpp.obj
+build IA-vacuum-agent.exe: CXX_EXECUTABLE_LINKER__IA-vacuum-agent_Debug CMakeFiles/IA-vacuum-agent.dir/src/main.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/Environment.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/Square.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/Display.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/VacuumAgent.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/Sensor.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/Actuators.cpp.obj CMakeFiles/IA-vacuum-agent.dir/src/State.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\IA-vacuum-agent.dir

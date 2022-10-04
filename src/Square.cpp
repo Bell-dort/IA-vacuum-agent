@@ -27,6 +27,7 @@ void Square::addJewel() {
 int Square::cleanDust() {
     int nbDust = m_nbDust;
     m_nbDust = 0;
+    m_nbJewel = 0;
 
     return nbDust;
 }
@@ -36,4 +37,14 @@ int Square::pickUpJewels() {
     m_nbJewel = 0;
 
     return nbJewel;
+}
+
+Square **Square::emptySquares(int height, int width) {
+    Square** squares = new Square * [height];
+    for (int i = 0; i < height; ++i) {
+        squares[i] = new Square[width];
+        for (int j = 0; j < width; ++j) {
+            squares[i][j] = Square();
+        }
+    }
 }

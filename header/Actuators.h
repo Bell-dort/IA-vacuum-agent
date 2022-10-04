@@ -9,7 +9,7 @@
 
 class Actuators {
 public:
-    Actuators(Environment* environment);
+    Actuators(Environment* environment, int* vacuumPosX, int* vacuumPosY);
     void moveRight();
     void moveLeft();
     void moveDown();
@@ -18,7 +18,9 @@ public:
     void cleanSquare();
 
 private:
-    Environment* env;
+    Environment* pEnv;
+    int* pVacuumPosX;
+    int* pVacuumPosY;
 };
 
 

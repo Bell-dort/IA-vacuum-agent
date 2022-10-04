@@ -13,6 +13,8 @@ public:
     ~Sensor();
     void observe();
 
+    Square** getObsSquares();
+
     void displayObsEnv();
 
 private:
@@ -20,8 +22,6 @@ private:
     int m_obsEnvHeight;
     int m_obsEnvWidth;
     Square** m_obsSquares;
-    int m_obsVacuumX;
-    int m_obsVacuumY;
 };
 
 

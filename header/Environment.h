@@ -23,10 +23,10 @@ public:
     const int getWidth();
     int getJewelSpawnProbability();
     int getDustSpawnProbability();
-    int getVacuumX();
-    int getVacuumY();
-    void setVacuumX(int x);
-    void setVacuumY(int y);
+    // int getVacuumX();
+    // int getVacuumY();
+    // void setVacuumX(int x);
+    // void setVacuumY(int y);
 
     void run();
     void generateDust();
@@ -41,8 +41,8 @@ private:
     float m_dustSpawnProbability;
     float m_jewelSpawnProbability;
     float m_frequency;
-    int m_vacuumX;
-    int m_vacuumY;
+    // int m_vacuumX;
+    // int m_vacuumY;
 };
 
 

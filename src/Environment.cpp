@@ -94,7 +94,7 @@ int Environment::getJewelSpawnProbability() {
     return m_jewelSpawnProbability;
 }
 
-int Environment::getVacuumX() {
+/*int Environment::getVacuumX() {
     return m_vacuumX;
 }
 
@@ -108,6 +108,6 @@ void Environment::setVacuumX(int x) {
 
 void Environment::setVacuumY(int y) {
     m_vacuumY = y;
-}
+}*/
 
 

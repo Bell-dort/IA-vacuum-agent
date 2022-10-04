@@ -35,9 +35,6 @@ void Sensor::observe() {
         }
     }
 
-    m_obsVacuumX = env->getVacuumX();
-    m_obsVacuumY = env->getVacuumY();
-
     displayObsEnv();
 }
 
@@ -45,7 +42,7 @@ void Sensor::displayObsEnv() {
     std::string tempLine("");
     std::string hSeparator("----------------------------------------------");
 
-    std::cout << "Sensor's observed env : " << std::endl;
+    std::cout << "Sensor's observed pEnv : " << std::endl;
     for (int i(0); i < m_obsEnvHeight; i++) {
         tempLine += "|";
         for (int j = 0; j < m_obsEnvWidth; ++j) {
@@ -55,4 +52,8 @@ void Sensor::displayObsEnv() {
         tempLine = "";
     }
     std::cout << hSeparator << std::endl << std::endl;
+}
+
+Square **Sensor::getObsSquares() {
+    return m_obsSquares;
 }

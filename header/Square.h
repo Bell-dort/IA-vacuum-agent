@@ -16,6 +16,7 @@ public:
     void addJewel();
     int pickUpJewels();
     int cleanDust();
+    static Square** emptySquares(int height, int width);
 
 private:
     int m_nbDust;
