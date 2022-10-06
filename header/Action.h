@@ -4,14 +4,18 @@
 
 #ifndef IA_VACUUM_AGENT_ACTION_H
 #define IA_VACUUM_AGENT_ACTION_H
+namespace Actions {
+    enum Action {
+        RIGHT,
+        LEFT,
+        UP,
+        DOWN,
+        PICK,
+        CLEAN
+    };
 
-enum Action {
-    RIGHT,
-    LEFT,
-    UP,
-    DOWN,
-    PICK,
-    CLEAN
-};
+    static const Action All[] = {RIGHT, LEFT, UP, DOWN, PICK, CLEAN};
+}
+
 
 #endif //IA_VACUUM_AGENT_ACTION_H

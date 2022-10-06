@@ -23,7 +23,7 @@ private:
     int m_posY = 0;
     Square** m_beliefs;
     Square** m_desire;
-    std::vector<Action> m_intents;
+    std::vector<Actions::Action> m_intents;
     Sensor m_sensor;
     Actuators m_actuators;
     float m_frequency;
