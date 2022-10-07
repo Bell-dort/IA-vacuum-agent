@@ -17,6 +17,9 @@ public:
     int pickUpJewels();
     int cleanDust();
     static Square** emptySquares(int height, int width);
+    static Square** fullSquares(int height, int width);
+
+    bool operator==(const Square& other);
 
 private:
     int m_nbDust;

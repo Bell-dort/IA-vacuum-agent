@@ -11,12 +11,14 @@
 #include "Actuators.h"
 #include "Environment.h"
 #include "Action.h"
-
+#include "GraphSearchStrategy.h"
 
 class VacuumAgent {
 public:
-    VacuumAgent(Environment *environment, int posX, int posY, Square **desire);
+    VacuumAgent(Environment *environment, int posX, int posY, Square **desire, float frequency);
     void run();
+    void doAction();
+    bool isPosition(int x, int y);
 
 private:
     int m_posX = 0;

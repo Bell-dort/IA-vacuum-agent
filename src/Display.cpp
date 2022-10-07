@@ -3,18 +3,35 @@
 //
 
 #include "../header/Display.h"
-void Display::consoleRender(Environment env) {
-    int envHeight = env.getHeight();
-    int envWidth= env.getWidth();
-    Square** envSquares = env.getSquares();
+Display::Display(Environment *env, VacuumAgent *vacuum, float frequency): pEnv(env), pVacuum(vacuum), m_frequency(frequency) {}
+
+void Display::run() {
+    while (1) {
+        consoleRender();
+        sleep(1/m_frequency);
+    }
+}
+
+void Display::consoleRender() {
+    int envHeight = pEnv->getHeight();
+    int envWidth= pEnv->getHeight();
+    Square** envSquares = pEnv->getSquares();
     std::string tempLine("");
 
+    std::cout << std::endl;
     for (int i(0); i < envHeight; i++) {
         tempLine += "|";
         for (int j = 0; j < envWidth; ++j) {
-            tempLine += "D:" + std::to_string(envSquares[i][j].getNbDust()) + " J:" + std::to_string(envSquares[i][j].getNbJewel()) + "|";
+            if (pVacuum->isPosition(j, i)) {
+                tempLine += "*";
+            } else {
+                tempLine += " ";
+            }
+            tempLine +=  "D:" + std::to_string(envSquares[j][i].getNbDust()) + " J:" + std::to_string(envSquares[j][i].getNbJewel()) + "|";
         }
         std::cout << tempLine << std::endl;
         tempLine = "";
     }
+    std::cout << std::endl;
+
 }

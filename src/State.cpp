@@ -4,10 +4,9 @@
 
 #include "../header/State.h"
 
-State::State(Square **squares, int vacuumX, int vacuumY): m_vacuumX(vacuumX), m_vacuumY(vacuumY) {
-    int squareRowSize = sizeof squares[0];
-    m_height = sizeof squares / squareRowSize;
-    m_width = squareRowSize / sizeof(Square);
+State::State(Square **squares, int squaresHeight, int squaresWidth, int vacuumX, int vacuumY): m_vacuumX(vacuumX), m_vacuumY(vacuumY) {
+    m_height = squaresHeight;
+    m_width = squaresWidth;
 
     m_squares = new Square * [m_height];
 
@@ -19,7 +18,7 @@ State::State(Square **squares, int vacuumX, int vacuumY): m_vacuumX(vacuumX), m_
     }
 }
 
-State::State(const State &other) {
+/*State::State(const State &other) {
     m_height = other.m_height;
     m_width = other.m_width;
 
@@ -34,49 +33,64 @@ State::State(const State &other) {
 
     m_vacuumX = other.m_vacuumX;
     m_vacuumY = other.m_vacuumY;
-}
+}*/
 
 State* State::nextState(Actions::Action action) {
 
-    State newState = State(m_squares, m_vacuumX, m_vacuumY);
+    State* pState = nullptr;
+    State newState = State(m_squares, m_height, m_width, m_vacuumX, m_vacuumY);
     switch (action) {
         case Actions::Action::CLEAN :
             newState.m_squares[m_vacuumX][m_vacuumY].cleanDust();
-            return &newState;
+            pState = &newState;
             break;
 
         case Actions::Action::PICK :
             newState.m_squares[m_vacuumX][m_vacuumY].pickUpJewels();
-            return &newState;
+            pState = &newState;
             break;
 
         case Actions::Action::RIGHT :
-            if (m_vacuumX < m_width) {
+            if (m_vacuumX < m_width - 1) {
                 newState.m_vacuumX++;
-                return &newState;
+                pState = &newState;
             }
             break;
 
         case Actions::Action::LEFT :
             if (m_vacuumX > 0) {
                 newState.m_vacuumX--;
-                return &newState;
+                pState = &newState;
             }
             break;
 
         case Actions::Action::UP :
             if (m_vacuumY > 0) {
                 newState.m_vacuumY--;
-                return &newState;
+                pState = &newState;
             }
             break;
 
         case Actions::Action::DOWN :
-            if (m_vacuumY < m_height) {
+            if (m_vacuumY < m_height - 1) {
                 newState.m_vacuumY++;
-                return &newState;
+                pState = &newState;
             }
             break;
     }
-    return nullptr;
+
+    return pState;
+}
+
+bool State::operator==(const State &other) {
+
+    for (int i = 0; i < m_height; ++i) {
+        for (int j = 0; j < m_width; ++j) {
+            if (!(m_squares[i][j] == other.m_squares[i][j])) {
+                return false;
+            }
+        }
+    }
+
+    return true;
 }

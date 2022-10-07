@@ -16,17 +16,14 @@
 
 class Environment {
 public:
-    Environment();
+    Environment(float frequency);
     ~Environment();
     Square** getSquares();
+    void setSquares(Square** squares);
     const int getHeight();
     const int getWidth();
     int getJewelSpawnProbability();
     int getDustSpawnProbability();
-    // int getVacuumX();
-    // int getVacuumY();
-    // void setVacuumX(int x);
-    // void setVacuumY(int y);
 
     void run();
     void generateDust();

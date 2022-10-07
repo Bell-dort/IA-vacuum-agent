@@ -32,11 +32,11 @@ void Actuators::moveUp() {
 }
 
 void Actuators::pickUpJewel() {
-    pEnv->getSquares()[*pVacuumPosX, *pVacuumPosY]->pickUpJewels();
+    pEnv->getSquares()[*pVacuumPosX][*pVacuumPosY].pickUpJewels();
     // TODO score perf ?
 }
 
 void Actuators::cleanSquare() {
-    pEnv->getSquares()[*pVacuumPosX, *pVacuumPosY]->cleanDust();
+    pEnv->getSquares()[*pVacuumPosX][*pVacuumPosY].cleanDust();
     // TODO score perf ?
 }

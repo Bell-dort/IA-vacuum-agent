@@ -26,7 +26,7 @@ Sensor::~Sensor() {
 
 void Sensor::observe() {
 
-    std::cout << "Observing..." << std::endl;
+    std::cout << std::endl << "Observing..." << std::endl;
     Square** envSquares = env->getSquares();
 
     for (int i = 0; i < m_obsEnvHeight; ++i) {
@@ -35,7 +35,7 @@ void Sensor::observe() {
         }
     }
 
-    displayObsEnv();
+    // displayObsEnv();
 }
 
 void Sensor::displayObsEnv() {
@@ -56,4 +56,12 @@ void Sensor::displayObsEnv() {
 
 Square **Sensor::getObsSquares() {
     return m_obsSquares;
+}
+
+int Sensor::getObsSquaresHeight() {
+    return m_obsEnvHeight;
+}
+
+int Sensor::getObsSquaresWidth() {
+    return m_obsEnvWidth;
 }

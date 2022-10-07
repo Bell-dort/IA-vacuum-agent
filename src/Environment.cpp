@@ -4,14 +4,12 @@
 
 #include "../header/Environment.h"
 
-Environment::Environment(): m_height(5), m_width(5), m_dustSpawnProbability(0.3f), m_jewelSpawnProbability(0.2f), m_frequency(1) {
+Environment::Environment(float frequency): m_height(5), m_width(5), m_dustSpawnProbability(0.3f), m_jewelSpawnProbability(0.2f), m_frequency(frequency) {
     m_squares = new Square * [m_width];
 
     for (int i(0); i < m_width; i++) {
         m_squares[i] = new Square[m_height];
     }
-
-    srand(time(NULL));
 }
 
 Environment::~Environment() {
@@ -23,17 +21,18 @@ Environment::~Environment() {
 }
 
 void Environment::run() {
+    srand(time(NULL));
     float spawningJewel;
     float spawningDust;
     while (1) {
         spawningDust = float(rand() % 10)/10;
         spawningJewel = float(rand() % 10)/10;
 
-        std::cout << "sJ: " + std::to_string(spawningJewel) + "pJ : " + std::to_string(m_jewelSpawnProbability) << std::endl;
+        // std::cout << "sJ: " + std::to_string(spawningJewel) + "pJ : " + std::to_string(m_jewelSpawnProbability) << std::endl;
         if (spawningJewel < m_jewelSpawnProbability) {
             generateJewel();
         }
-        std::cout << "sD: " + std::to_string(spawningDust) + "pD : " + std::to_string(m_dustSpawnProbability) << std::endl;
+        // std::cout << "sD: " + std::to_string(spawningDust) + "pD : " + std::to_string(m_dustSpawnProbability) << std::endl;
 
         if (spawningDust < m_dustSpawnProbability) {
             generateDust();
@@ -47,14 +46,14 @@ void Environment::generateDust() {
     int randX = rand() % 5;
     int randY = rand() % 5;
     m_squares[randX][randY].addDust();
-    display();
+    // display();
 }
 
 void Environment::generateJewel() {
     int randX = rand() % 5;
     int randY = rand() % 5;
     m_squares[randX][randY].addJewel();
-    display();
+    // display();
 }
 
 void Environment::display() {
@@ -76,6 +75,10 @@ void Environment::display() {
 
 Square** Environment::getSquares() {
     return m_squares;
+}
+
+void Environment::setSquares(Square **squares) {
+    m_squares = squares;
 }
 
 int const Environment::getHeight() {

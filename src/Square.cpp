@@ -47,4 +47,24 @@ Square **Square::emptySquares(int height, int width) {
             squares[i][j] = Square();
         }
     }
+
+    return squares;
+}
+
+Square **Square::fullSquares(int height, int width) {
+    Square** squares = new Square * [height];
+    for (int i = 0; i < height; ++i) {
+        squares[i] = new Square[width];
+        for (int j = 0; j < width; ++j) {
+            squares[i][j] = Square();
+            squares[i][j].m_nbJewel = 1;
+            squares[i][j].m_nbDust = 1;
+        }
+    }
+
+    return squares;
+}
+
+bool Square::operator==(const Square &other) {
+    return m_nbJewel == other.m_nbJewel && m_nbDust == other.m_nbDust;
 }

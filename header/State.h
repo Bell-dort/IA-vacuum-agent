@@ -12,9 +12,11 @@
 
 class State {
 public:
-    State(Square** squares, int vacuumX, int vacuumY);
-    State(const State &other);
+    State(Square** squares, int squaresHeight, int squaresWidth, int vacuumX, int vacuumY);
+    // State(const State &other);
     State* nextState(Actions::Action action);
+
+    bool operator==(const State& other);
 private:
     int m_height;
     int m_width;

@@ -7,12 +7,19 @@
 
 #include <iostream>
 #include "Environment.h"
+#include "VacuumAgent.h"
 #include "Square.h"
 
 class Display {
 public:
     Display();
-    void consoleRender(Environment env);
+    Display(Environment* env, VacuumAgent* vacuum, float frequency);
+    void run();
+    void consoleRender();
+private:
+    Environment* pEnv;
+    VacuumAgent* pVacuum;
+    float m_frequency;
 };
 
 

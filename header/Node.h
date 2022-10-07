@@ -12,7 +12,12 @@
 class Node {
 public:
     Node(Node* father, State state, int cost);
-    std::vector<Node> expand();
+    std::vector<Node*> expand();
+
+    State* getState();
+    int getCost();
+
+    std::vector<Actions::Action> getActionsFromSolution();
 private:
     Actions::Action m_lastAction;
     Node* m_father;

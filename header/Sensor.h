@@ -14,6 +14,8 @@ public:
     void observe();
 
     Square** getObsSquares();
+    int getObsSquaresHeight();
+    int getObsSquaresWidth();
 
     void displayObsEnv();
 
